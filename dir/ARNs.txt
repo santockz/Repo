@@ -1,0 +1,20 @@
+www-preprod.autotrader.com 
+
+S3 BUCKET ARN: arn:aws:s3:::atc-jmeter-test-crator-new
+
+
+arn:aws:s3:::atc-jmeter-labacc
+
+EC2 IAM Role ARN: arn:aws:iam::959687418799:role/SCEC2Role
+
+EC2 Instance Profile ARN: arn:aws:iam::959687418799:instance-profile/SCEC2Role
+
+LAMBDA IAM ROLE ARN: arn:aws:iam::959687418799:role/SCLAMBDAIAMROLE
+
+ACESS KEY IAM ROLE LAB ADMIN: ASIAJGBG62B2TYZBBCCQ
+SECURE ACCESS KEEY - || -   : tx2TbLP8Nqco9zMzYDKZ64N9BMQHRO/CoxZ+b87z
+
+
+Security Group Name on VPC: SCVPCGRP
+
+INVOKE URL: https://jzlt0bepkc.execute-api.us-east-1.amazonaws.com/v1

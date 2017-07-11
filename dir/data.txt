@@ -1,0 +1,69 @@
+www-preprod.autotrader.com
+
+santosh.bobade@coxautoinc.com
+
+
+
+26 JUNE ===== NEW
+----------------------------------
+SGroup Name: SmokingCratorSecurityGroup
+
+
+SCEC2NewRole
+
+SCNewLambdaRole
+
+  https://s4daq4jwgj.execute-api.us-east-1.amazonaws.com/v1
+
+
+JMETER SPLUNK QUERY BY LAKSHMI:
+
+index=atc_atcweb_preprod host=ip-*  eb_env="cs-pp-green" |timechart span=1h avg(ttr_cs) AS a, median(ttr_cs) AS p50, perc90(ttr_cs) AS p90, perc95(ttr_cs) AS p95 | eval a=a*pow(10, -3) | eval p90=p90*pow(10, -3) | eval p50=p50*pow(10, -3)  | eval  p95=p95*pow(10, -3) | sort -c, host | rename p50 AS "Median"  a AS "Average" p90 AS "90th Percentile" p95 AS "95th Percentile" | appendcols [search index=atc_atcweb_preprod host=ip-*  eb_env="cs-pp-green" | timechart  span=1h count as req_count|eval req_count=req_count*pow(10, -1)]
+
+
+/** Function that count occurrences of a substring in a string;
+ * @param {String} string               The string
+ * @param {String} subString            The sub string to search for
+ * @param {Boolean} [allowOverlapping]  Optional. (Default:false)
+ *
+ * @author Vitim.us https://gist.github.com/victornpb/7736865
+ * @see Unit Test https://jsfiddle.net/Victornpb/5axuh96u/
+ * @see http://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#7924240
+ */
+function occurrences(string, subString, allowOverlapping) {
+
+    string += "";
+    subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+
+    var n = 0,
+        pos = 0,
+        step = allowOverlapping ? 1 : subString.length;
+
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
+}
+
+
+
+
+User Name: SmokingCratorUpload
+Group: LabAdmin
+
+
+AccessKeyID: AKIAIB7D7YHMGYFP243A
+
+SecretAccessKey: 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
+
+
+
+
+
+
+aws sts decode-authorization-message --encoded-message 2rirVMtRk9W21UezUwBuzJ4wsJ9mFQB-XG19yVhgN05XzUrX2iAbtVXJ7rWoKiP1prg1pnCel-5RPKd50rytRUTc9JIe4rKS_9NwUGGUh5bXqyKvM8ur33UVq_rIm3tOcfZuNzyZdgNl3tIAZ3Oq08EgcHzGwn8VRraaRY81vEct5POFZb0J4TTq31iu0Z5b66JfYxlaSEJvCoqDFg8_4EYdxZXCNfIVKwUE7vfEsvSj89dKzmhDX-qtayumIDzAcUhaR9E_xXFMrIBugSmQ8VZ-y4tD6Q-LuqoetwRobYhNVzkG7YzwEHwDR13e8cZ9pRBfx4Wgp-0h-Lm4_lKihJeE3wTqjKJpv9gm9jBTKcXjPTklSONyQsebhYnHQOrKipNt75WBaPCdvG_O_iHNRyZb
